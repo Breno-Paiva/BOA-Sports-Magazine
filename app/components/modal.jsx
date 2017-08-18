@@ -2,12 +2,10 @@ import React from 'react';
 import NameModal from './name_component';
 
 class Modal extends React.Component {
-
   close(e) {
     e.preventDefault()
     this.props.closeModal();
   }
-
   render() {
     if(this.props.modalType){
       return(

@@ -11,6 +11,7 @@ class Settings extends React.Component{
     this.state = { modalType: null }
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.fetchInfo = this.fetchInfo.bind(this);
   }
 
 // modal is controlled with the two functions below.  A null modal render nothing and acts as a closed modal.  If the state has a designated modalType, then that's what renders
@@ -18,7 +19,14 @@ class Settings extends React.Component{
     this.setState({modalType: modalType})
   }
   closeModal(){
+    this.fetchInfo()
     this.setState({modalType: null })
+  }
+
+  fetchInfo(){
+    this.name = this.props.store.getState().name;
+    // this.address = this.props.store.getState().address;
+    // this.teams = this.props.store.getState().team;
   }
 
   render(){
