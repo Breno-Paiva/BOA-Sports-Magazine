@@ -8,17 +8,18 @@ class Modal extends React.Component {
   }
 
   render() {
-    if(this.props.isOpen === false){
-        return null
-    }else{
+    if(this.props.modalType){
       return(
         <div>
           <div className="modal">
             <h2>Modal</h2>
+            <h3>{this.props.modalType}</h3>
           </div>
-          <div className="backdrop" onClick={e => this.close(e)}/>}
+          <div className="backdrop" onClick={e => this.close(e)}/>
         </div>
       )
+    }else{
+    return null
     }
   }
 }
