@@ -14,12 +14,44 @@ const mapDispatchToProps = (dispatch) => {
 
 class NameModal extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = { firstName: this.props.name.first, lastName: this.props.name.last }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.updateName({first: this.state.firstName, last: this.state.lastName})
+  }
+
+  update(field) {
+  return e => this.setState({ [field]: e.currentTarget.value });
+}
+// {this.renderErrors()}
+
   render() {
     return(
       <div>
         <h2>**name component modal**</h2>
         <h4>{this.props.name.first} {this.props.name.last}</h4>
-        <button onClick={() => this.props.updateName({first:'ron', last:'weasly'})}>change to ron</button>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.firstName}
+            onChange={this.update("firstName")}
+          />
+          <br/>
+          <input
+            type="text"
+            value={this.state.lastName}
+            onChange={this.update("lastName")}
+          />
+          <br/>
+          <input  type="submit" value={'save'} />
+          <br/>
+        </form>
       </div>
     )
   }
