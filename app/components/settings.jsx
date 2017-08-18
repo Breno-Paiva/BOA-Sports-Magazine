@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from './modal';
 import NameModal from './name_component';
+import AddressModal from './address_component';
 
 class Settings extends React.Component{
   constructor(props){
@@ -42,7 +43,7 @@ class Settings extends React.Component{
           <h2>Address</h2>
           <h4>{this.address.street}</h4>
           <h4>{this.address.city}, {this.address.state} {this.address.zip}</h4>
-          <button onClick={e => this.openModal("address")}>Edit Address</button>
+          <button onClick={e => this.openModal(AddressModal)}>Edit Address</button>
         </div>
         <div>
           <h2>Teams</h2>

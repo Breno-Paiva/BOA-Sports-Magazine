@@ -50,7 +50,7 @@ class NameModal extends React.Component {
             onChange={this.update("lastName")}
           />
           <br/>
-          <button onClick={e => this.props.closeModal(e)}>cancel</button>
+          <button onClick={e =>this.props.closeModal(e)}>cancel</button>
           <input  type="submit" value={'save'} />
           <br/>
         </form>
