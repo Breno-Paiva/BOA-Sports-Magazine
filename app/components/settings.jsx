@@ -25,8 +25,8 @@ class Settings extends React.Component{
 
   fetchInfo(){
     this.name = this.props.store.getState().name;
-    // this.address = this.props.store.getState().address;
-    // this.teams = this.props.store.getState().team;
+    this.address = this.props.store.getState().address;
+    this.teams = this.props.store.getState().team;
   }
 
   render(){
