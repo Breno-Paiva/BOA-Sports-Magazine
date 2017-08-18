@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal'
 
 class Settings extends React.Component{
   constructor(props){
@@ -6,6 +7,17 @@ class Settings extends React.Component{
     this.name = props.store.getState().name;
     this.address = props.store.getState().address;
     this.teams = props.store.getState().team;
+    this.state = { isModalOpen: false }
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal(e){
+    e.preventDefault()
+    this.setState({isModalOpen: true})
+  }
+  closeModal(){
+    this.setState({isModalOpen: false})
   }
 
   render(){
@@ -15,11 +27,13 @@ class Settings extends React.Component{
         <div>
           <h2>Name</h2>
           <h4>{this.name.first} {this.name.last}</h4>
+          <button onClick={e => this.openModal(e)}>Edit Name</button>
         </div>
         <div>
           <h2>Address</h2>
           <h4>{this.address.street}</h4>
           <h4>{this.address.city}, {this.address.state} {this.address.zip}</h4>
+          <button>Edit Address</button>
         </div>
         <div>
           <h2>Teams</h2>
@@ -32,7 +46,9 @@ class Settings extends React.Component{
               ))
             }
          </ol>
+         <button>Update Teams</button>
         </div>
+        <Modal isOpen={this.state.isModalOpen} closeModal={this.closeModal}/>
       </div>
     );
   }
