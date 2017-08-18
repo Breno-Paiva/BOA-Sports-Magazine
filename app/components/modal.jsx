@@ -1,4 +1,5 @@
 import React from 'react';
+import NameModal from './name_component';
 
 class Modal extends React.Component {
 
@@ -13,7 +14,7 @@ class Modal extends React.Component {
         <div>
           <div className="modal">
             <h2>Modal</h2>
-            <h3>{this.props.modalType}</h3>
+            < this.props.modalType />
           </div>
           <div className="backdrop" onClick={e => this.close(e)}/>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import Modal from './modal'
+import Modal from './modal';
+import NameModal from './name_component';
 
 class Settings extends React.Component{
   constructor(props){
@@ -12,6 +13,7 @@ class Settings extends React.Component{
     this.closeModal = this.closeModal.bind(this);
   }
 
+// modal is controlled with the two functions below.  A null modal render nothing and acts as a closed modal.  If the state has a designated modalType, then that's what renders
   openModal(modalType){
     this.setState({modalType: modalType})
   }
@@ -26,7 +28,7 @@ class Settings extends React.Component{
         <div>
           <h2>Name</h2>
           <h4>{this.name.first} {this.name.last}</h4>
-          <button onClick={e => this.openModal("name")}>Edit Name</button>
+          <button onClick={e => this.openModal(NameModal)}>Edit Name</button>
         </div>
         <div>
           <h2>Address</h2>

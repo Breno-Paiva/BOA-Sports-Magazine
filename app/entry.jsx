@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store';
-import Settings from './components/settings';
+import Root from './root';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const preloadedState = { name: { first: 'Harry', last: 'Potter' },
@@ -10,5 +10,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
 };
   const store = configureStore(preloadedState);
   const root = document.getElementById("root");
-  ReactDOM.render(<Settings store={store} />, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
