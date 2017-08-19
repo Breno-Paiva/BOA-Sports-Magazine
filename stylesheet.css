@@ -23,20 +23,23 @@
 .header {
   background: #464646;
   color: white;
-  height: 20px;
+  height: 40px;
   padding: 20px;
   font-size: 30px;
 }
 
 .page-title {
+  color: darkgray;
   font-size: 30px;
   padding: 20px 0;
 }
 
 .setting-group {
-  border-top: 1px solid #eee;
+  border-top: 2px solid #ddd;
   padding: 20px 0px;
   display: flex;
+  width: 350px;
+  justify-content: space-between;
 }
 
 .settings {
@@ -46,12 +49,18 @@
 button {
   color: white;
   font-size: 15px;
-  padding: 5px;
+  padding: 6px;
   height: 25px;
+  border-radius: 4px;
 }
 
 .settings-button {
   background: #0073d0;
+
+}
+
+.settings-button:hover {
+  background: #208fe8;
 }
 
 .save-button {

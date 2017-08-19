@@ -43,27 +43,27 @@ class Settings extends React.Component{
         <h1 className='page-title'>SportsMag Settings</h1>
         <div className='setting-group'>
           <div>
-            <h2>Name</h2>
-            <h4>{this.name.first} {this.name.last}</h4>
+            <h3>Name</h3>
+            <h5>{this.name.first} {this.name.last}</h5>
           </div>
           <button className='settings-button' onClick={e => this.openModal(NameModal)}>Edit Name</button>
         </div>
         <div className='setting-group'>
           <div>
-            <h2>Address</h2>
-            <h4>{this.address.street}</h4>
-            <h4>{this.address.city}, {this.address.state} {this.address.zip}</h4>
+            <h3>Address</h3>
+            <h5>{this.address.street}</h5>
+            <h5>{this.address.city}, {this.address.state} {this.address.zip}</h5>
           </div>
           <button className='settings-button' onClick={e => this.openModal(AddressModal)}>Edit Address</button>
         </div>
         <div className='setting-group'>
           <div>
-            <h2>Teams</h2>
+            <h3>Teams</h3>
             <ol>
               {
                 this.team.map((team, key) => (
                   <li key={`team-list-${key}`}>
-                    <h4>{team}</h4>
+                    <h5>{team}</h5>
                   </li>
                 ))
               }
