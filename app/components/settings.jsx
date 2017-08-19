@@ -34,35 +34,41 @@ class Settings extends React.Component{
   render(){
     let teamButton = null
     if(this.team.length > 0) {
-        teamButton = <button onClick={e => this.openModal(TeamModal)}>Update Teams</button>
+        teamButton = <button className='settings-button' onClick={e => this.openModal(TeamModal)}>Update Teams</button>
     }else {
-      teamButton = <button onClick={e => this.openModal(TeamModal)}>Add Teams</button>
+      teamButton = <button className='settings-button' onClick={e => this.openModal(TeamModal)}>Add Teams</button>
     }
     return (
-      <div>
-        <h1>SportsMag Settings</h1>
-        <div>
-          <h2>Name</h2>
-          <h4>{this.name.first} {this.name.last}</h4>
-          <button onClick={e => this.openModal(NameModal)}>Edit Name</button>
+      <div className='settings'>
+        <h1 className='page-title'>SportsMag Settings</h1>
+        <div className='setting-group'>
+          <div>
+            <h2>Name</h2>
+            <h4>{this.name.first} {this.name.last}</h4>
+          </div>
+          <button className='settings-button' onClick={e => this.openModal(NameModal)}>Edit Name</button>
         </div>
-        <div>
-          <h2>Address</h2>
-          <h4>{this.address.street}</h4>
-          <h4>{this.address.city}, {this.address.state} {this.address.zip}</h4>
-          <button onClick={e => this.openModal(AddressModal)}>Edit Address</button>
+        <div className='setting-group'>
+          <div>
+            <h2>Address</h2>
+            <h4>{this.address.street}</h4>
+            <h4>{this.address.city}, {this.address.state} {this.address.zip}</h4>
+          </div>
+          <button className='settings-button' onClick={e => this.openModal(AddressModal)}>Edit Address</button>
         </div>
-        <div>
-          <h2>Teams</h2>
-          <ol>
-            {
-              this.team.map((team, key) => (
-                <li key={`team-list-${key}`}>
-                  <h4>{team}</h4>
-                </li>
-              ))
-            }
-         </ol>
+        <div className='setting-group'>
+          <div>
+            <h2>Teams</h2>
+            <ol>
+              {
+                this.team.map((team, key) => (
+                  <li key={`team-list-${key}`}>
+                    <h4>{team}</h4>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
          {teamButton}
         </div>
         <Modal modalType={this.state.modalType} closeModal={this.closeModal}/>

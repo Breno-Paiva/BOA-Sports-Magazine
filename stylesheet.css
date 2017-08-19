@@ -20,11 +20,44 @@
   background: yellow
 }
 
-/*.modal {
-  position: absolute,
-  top: 50%,
-  left: 50%,
-  transform: translate(-50%, -50%),
-  z-index: 9999,
-  background: yellow
-}*/
+.header {
+  background: #464646;
+  color: white;
+  height: 20px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.page-title {
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.setting-group {
+  border-top: 1px solid #eee;
+  padding: 20px 0px;
+  display: flex;
+}
+
+.settings {
+  padding-left: 20px;
+}
+
+button {
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+  height: 25px;
+}
+
+.settings-button {
+  background: #0073d0;
+}
+
+.save-button {
+
+}
+
+.cancel-button {
+
+}
