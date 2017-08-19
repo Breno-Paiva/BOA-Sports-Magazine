@@ -28,8 +28,8 @@ class NameModal extends React.Component {
   }
 
   update(field) {
-  return e => this.setState({ [field]: e.currentTarget.value });
-}
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
 // {this.renderErrors()}
 
   render() {
