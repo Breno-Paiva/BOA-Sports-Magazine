@@ -24,7 +24,13 @@ class TeamModal extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.updateTeam(this.state.team)
+    let newTeam = this.state.team.slice();
+    for(var i = newTeam.length - 1; i >= 0; i--) {
+      if (newTeam[i] === "") {
+         newTeam.splice(i, 1);
+      }
+    }
+    this.props.updateTeam(newTeam)
     this.props.closeModal(e);
   }
 
