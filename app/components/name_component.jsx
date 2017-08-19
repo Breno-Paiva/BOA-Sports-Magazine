@@ -35,25 +35,33 @@ class NameModal extends React.Component {
   render() {
     return(
       <div>
-        <h2>**name component modal**</h2>
-        <h4>{this.props.name.first} {this.props.name.last}</h4>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.firstName}
-            onChange={this.update("firstName")}
-          />
-          <br/>
-          <input
-            type="text"
-            value={this.state.lastName}
-            onChange={this.update("lastName")}
-          />
-          <br/>
-          <button onClick={e =>this.props.closeModal(e)}>cancel</button>
-          <input  type="submit" value={'save'} />
-          <br/>
-        </form>
+        <div className='x-close'>
+          <h6 onClick={e =>this.props.closeModal(e)}>
+            Close <i className="fa fa-times-circle" aria-hidden="true"></i>
+          </h6>
+        </div>
+        <div className='modal-header'>
+          <h4>Edit Name</h4>
+        </div>
+        <div className='modal-form'>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={this.state.firstName}
+              onChange={this.update("firstName")}
+              />
+            <br/>
+            <input
+              type="text"
+              value={this.state.lastName}
+              onChange={this.update("lastName")}
+              />
+            <br/>
+            <button className='cancel-button' onClick={e =>this.props.closeModal(e)}>cancel</button>
+            <input  type="submit" value={'save'} />
+            <br/>
+          </form>
+        </div>
       </div>
     )
   }

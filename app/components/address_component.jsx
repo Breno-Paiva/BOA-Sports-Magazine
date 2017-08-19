@@ -41,7 +41,12 @@ class AddressModal extends React.Component {
   render() {
     return(
       <div>
-        <h2>**address component modal**</h2>
+        <div className='x-close'>
+          <h6 onClick={e =>this.props.closeModal(e)}>
+            Close <i className="fa fa-times-circle" aria-hidden="true"></i>
+          </h6>
+        </div>
+        <h2>Edit Address</h2>
         <h4>{this.props.address.first} {this.props.address.last}</h4>
         <form id="address-form" onSubmit={this.handleSubmit}>
           <input
@@ -119,7 +124,7 @@ class AddressModal extends React.Component {
           />
           <br/>
           <br/>
-          <button onClick={e => this.props.closeModal(e)}>cancel</button>
+          <button className='cancel-button' onClick={e => this.props.closeModal(e)}>cancel</button>
           <input  type="submit" value={'save'} />
           <br/>
         </form>

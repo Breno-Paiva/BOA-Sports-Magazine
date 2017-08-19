@@ -51,7 +51,12 @@ class TeamModal extends React.Component {
   render() {
     return(
       <div>
-        <h2>**team component modal**</h2>
+        <div className='x-close'>
+          <h6 onClick={e =>this.props.closeModal(e)}>
+            Close <i className="fa fa-times-circle" aria-hidden="true"></i>
+          </h6>
+        </div>
+        <h2>add teams</h2>
         <form onSubmit={this.handleSubmit}>
           <ol>
             {
@@ -67,8 +72,8 @@ class TeamModal extends React.Component {
               })
             }
           </ol>
-          <button onClick={e =>this.addTeam(e)}>add team</button>
-          <button onClick={e =>this.props.closeModal(e)}>cancel</button>
+          <h6 onClick={e =>this.addTeam(e)}>+ add team</h6>
+          <button className='cancel-button' onClick={e =>this.props.closeModal(e)}>cancel</button>
           <input  type="submit" value={'save'} />
           <br/>
         </form>
