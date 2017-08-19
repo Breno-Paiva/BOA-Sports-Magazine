@@ -55,13 +55,12 @@ class TeamModal extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <ol>
             {
-              this.state.team.map((te, key) => {
+              this.state.team.map((team, key) => {
                 return (
-                  <li>
+                  <li key={`team-${key}`}>
                     <input
-                      key={`team-${key}`}
                       type="text"
-                      value={te}
+                      value={team}
                       onChange={e => this.update(e, key)}
                     />
                   </li>)

@@ -32,6 +32,12 @@ class Settings extends React.Component{
   }
 
   render(){
+    let teamButton = null
+    if(this.team.length > 0) {
+        teamButton = <button onClick={e => this.openModal(TeamModal)}>Update Teams</button>
+    }else {
+      teamButton = <button onClick={e => this.openModal(TeamModal)}>Add Teams</button>
+    }
     return (
       <div>
         <h1>SportsMag Settings</h1>
@@ -50,14 +56,14 @@ class Settings extends React.Component{
           <h2>Teams</h2>
           <ol>
             {
-              this.team.map(team => (
-                <li>
+              this.team.map((team, key) => (
+                <li key={`team-list-${key}`}>
                   <h4>{team}</h4>
                 </li>
               ))
             }
          </ol>
-         <button onClick={e => this.openModal(TeamModal)}>Update Teams</button>
+         {teamButton}
         </div>
         <Modal modalType={this.state.modalType} closeModal={this.closeModal}/>
       </div>
